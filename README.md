@@ -1,6 +1,9 @@
 This is the product website for the home application that allows controlling your home.
 
-For Video Tutorial click <html> <a href="https://drive.google.com/open?id=0B2Nwc20ABdUHRm01T09mSmYxRzQ> HERE </a></html>
+For Video Tutorial use the following URL:
+https://drive.google.com/open?id=0B2Nwc20ABdUHRm01T09mSmYxRzQ
+
+
 
 To download you have to press the button that says 'View on Github'.
 
