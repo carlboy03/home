@@ -1,0 +1,1 @@
+{"name": "Carlos' 3nd Home", "rooms": {"LivingRoom": {"Television": {"name": "Television", "powered": false, "time_off": "", "time_on": ""}}, "Sala": {"Camera": {"name": "Camera", "powered": false, "time_off": "", "time_on": ""}, "Cameras": {"name": "Cameras", "powered": false, "time_off": "", "time_on": ""}}}}

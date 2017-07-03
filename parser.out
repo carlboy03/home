@@ -1,0 +1,233 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    EDIT
+    HOME
+    MOVE
+    NUMBER
+    OFF
+    ON
+    RESERVED
+    TIMER
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> STATUS
+Rule 2     expression -> EXIT
+Rule 3     expression -> ROOMS
+Rule 4     expression -> ROOM PARAMETER STATUS
+Rule 5     expression -> ROOM PARAMETER STATUS PARAMETER
+Rule 6     expression -> ADD DEVICE PARAMETER PARAMETER
+Rule 7     expression -> REMOVE DEVICE PARAMETER PARAMETER
+Rule 8     expression -> REMOVE ROOM PARAMETER
+Rule 9     expression -> ADD ROOM PARAMETER
+Rule 10    expression -> ROOM PARAMETER DEVICES
+
+Terminals, with rules where they appear
+
+ADD                  : 6 9
+DEVICE               : 6 7
+DEVICES              : 10
+EDIT                 : 
+EXIT                 : 2
+HOME                 : 
+MOVE                 : 
+NUMBER               : 
+OFF                  : 
+ON                   : 
+PARAMETER            : 4 5 5 6 6 7 7 8 9 10
+REMOVE               : 7 8
+RESERVED             : 
+ROOM                 : 4 5 8 9 10
+ROOMS                : 3
+STATUS               : 1 4 5
+TIMER                : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . STATUS
+    (2) expression -> . EXIT
+    (3) expression -> . ROOMS
+    (4) expression -> . ROOM PARAMETER STATUS
+    (5) expression -> . ROOM PARAMETER STATUS PARAMETER
+    (6) expression -> . ADD DEVICE PARAMETER PARAMETER
+    (7) expression -> . REMOVE DEVICE PARAMETER PARAMETER
+    (8) expression -> . REMOVE ROOM PARAMETER
+    (9) expression -> . ADD ROOM PARAMETER
+    (10) expression -> . ROOM PARAMETER DEVICES
+
+    STATUS          shift and go to state 2
+    EXIT            shift and go to state 3
+    ROOMS           shift and go to state 4
+    ROOM            shift and go to state 5
+    ADD             shift and go to state 6
+    REMOVE          shift and go to state 7
+
+    expression                     shift and go to state 1
+
+state 1
+
+    (0) S' -> expression .
+
+
+
+state 2
+
+    (1) expression -> STATUS .
+
+    $end            reduce using rule 1 (expression -> STATUS .)
+
+
+state 3
+
+    (2) expression -> EXIT .
+
+    $end            reduce using rule 2 (expression -> EXIT .)
+
+
+state 4
+
+    (3) expression -> ROOMS .
+
+    $end            reduce using rule 3 (expression -> ROOMS .)
+
+
+state 5
+
+    (4) expression -> ROOM . PARAMETER STATUS
+    (5) expression -> ROOM . PARAMETER STATUS PARAMETER
+    (10) expression -> ROOM . PARAMETER DEVICES
+
+    PARAMETER       shift and go to state 8
+
+
+state 6
+
+    (6) expression -> ADD . DEVICE PARAMETER PARAMETER
+    (9) expression -> ADD . ROOM PARAMETER
+
+    DEVICE          shift and go to state 9
+    ROOM            shift and go to state 10
+
+
+state 7
+
+    (7) expression -> REMOVE . DEVICE PARAMETER PARAMETER
+    (8) expression -> REMOVE . ROOM PARAMETER
+
+    DEVICE          shift and go to state 11
+    ROOM            shift and go to state 12
+
+
+state 8
+
+    (4) expression -> ROOM PARAMETER . STATUS
+    (5) expression -> ROOM PARAMETER . STATUS PARAMETER
+    (10) expression -> ROOM PARAMETER . DEVICES
+
+    STATUS          shift and go to state 13
+    DEVICES         shift and go to state 14
+
+
+state 9
+
+    (6) expression -> ADD DEVICE . PARAMETER PARAMETER
+
+    PARAMETER       shift and go to state 15
+
+
+state 10
+
+    (9) expression -> ADD ROOM . PARAMETER
+
+    PARAMETER       shift and go to state 16
+
+
+state 11
+
+    (7) expression -> REMOVE DEVICE . PARAMETER PARAMETER
+
+    PARAMETER       shift and go to state 17
+
+
+state 12
+
+    (8) expression -> REMOVE ROOM . PARAMETER
+
+    PARAMETER       shift and go to state 18
+
+
+state 13
+
+    (4) expression -> ROOM PARAMETER STATUS .
+    (5) expression -> ROOM PARAMETER STATUS . PARAMETER
+
+    $end            reduce using rule 4 (expression -> ROOM PARAMETER STATUS .)
+    PARAMETER       shift and go to state 19
+
+
+state 14
+
+    (10) expression -> ROOM PARAMETER DEVICES .
+
+    $end            reduce using rule 10 (expression -> ROOM PARAMETER DEVICES .)
+
+
+state 15
+
+    (6) expression -> ADD DEVICE PARAMETER . PARAMETER
+
+    PARAMETER       shift and go to state 20
+
+
+state 16
+
+    (9) expression -> ADD ROOM PARAMETER .
+
+    $end            reduce using rule 9 (expression -> ADD ROOM PARAMETER .)
+
+
+state 17
+
+    (7) expression -> REMOVE DEVICE PARAMETER . PARAMETER
+
+    PARAMETER       shift and go to state 21
+
+
+state 18
+
+    (8) expression -> REMOVE ROOM PARAMETER .
+
+    $end            reduce using rule 8 (expression -> REMOVE ROOM PARAMETER .)
+
+
+state 19
+
+    (5) expression -> ROOM PARAMETER STATUS PARAMETER .
+
+    $end            reduce using rule 5 (expression -> ROOM PARAMETER STATUS PARAMETER .)
+
+
+state 20
+
+    (6) expression -> ADD DEVICE PARAMETER PARAMETER .
+
+    $end            reduce using rule 6 (expression -> ADD DEVICE PARAMETER PARAMETER .)
+
+
+state 21
+
+    (7) expression -> REMOVE DEVICE PARAMETER PARAMETER .
+
+    $end            reduce using rule 7 (expression -> REMOVE DEVICE PARAMETER PARAMETER .)
+
